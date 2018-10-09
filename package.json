@@ -4,7 +4,11 @@
   "description": "login",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel lib -d build",
+    "build:watch": "babel lib -w -d build",
+    "lint": "eslint lib/**; exit 0",
+    "lint:watch": "esw -w lib/**",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -35,11 +39,5 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "styled-components": "^3.4.9"
-  },
-  "scripts": {
-  "build": "babel lib -d build",
-  "lint": "eslint lib/**; exit 0",
-  "lint:watch": "esw -w lib/**",
-  "prepublish": "npm run build"
-},
+  }
 }
